@@ -1,0 +1,7 @@
+[run]
+source = simple_diff
+;branch = True
+;
+[report]
+show_missing = True
+omit =
