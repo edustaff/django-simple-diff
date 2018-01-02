@@ -18,11 +18,10 @@ class TestDiff(ModelDiffMixin, models.Model):
     name = models.CharField(max_length=100)
     number = models.IntegerField(default=0)
     test_date = models.DateField(blank=True, null=True)
-```
 
-```python
+
+
 obj = TestDiff(name='Foo')
-
 obj.name  # 'Foo'
 
 obj.name = 'Bar'

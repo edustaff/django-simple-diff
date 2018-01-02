@@ -33,7 +33,7 @@ CLASSIFIERS = [
 ]
 
 setup(
-    name='simple_diff',
+    name='django-simple-diff',
     version=__version__,
     author='Kevin Clark',
     author_email='kclark@edustaff.org',
