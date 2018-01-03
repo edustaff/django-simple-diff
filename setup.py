@@ -39,7 +39,7 @@ setup(
     author_email='kclark@edustaff.org',
     description=DESCRIPTION,
     long_description=DESCRIPTION,  # convert('README.md', 'rst'),
-    # url='https://',
+    url='https://github.com/ticalcster/django-simple-diff',
     license='MIT',
     install_requires=[
         "django",
