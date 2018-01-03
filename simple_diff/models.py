@@ -8,7 +8,7 @@ class ModelDiffMixin(object):
     """
 
     def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+        super(ModelDiffMixin, self).__init__(*args, **kwargs)
         self._saving_change_callbacks = False
         self.__initial = self._get_model_dict()
 
