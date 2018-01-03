@@ -20,13 +20,8 @@ class ModelDiffMixin(object):
             self._saving_change_callbacks = True
             try:
                 for field in self.changed_fields:
-                    print('field', field)
                     on_change_func = getattr(self, 'on_%s_change' % field, None)
-                    print('func', on_change_func)
                     if callable(on_change_func):
-                        print('callable', callable(on_change_func))
-                        print('args', self.get_field_diff(field))
-                        print('*args', *self.get_field_diff(field))
                         on_change_func(*self.get_field_diff(field))
             finally:
                 self._saving_change_callbacks = False
