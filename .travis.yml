@@ -1,7 +1,6 @@
 language: python
 
 python:
-  - 2.7
   - 3.4
   - 3.5
   - 3.6
@@ -14,5 +13,5 @@ install:
   - pip install tox
 
 script:
-  - export TOX_ENV=py${TRAVIS_PYTHON_VERSION/./}-${DJANGOVER}-linux
+  - export TOX_ENV=py${TRAVIS_PYTHON_VERSION/./}-${DJANGOVER}
   - tox -r -e "$TOX_ENV"
