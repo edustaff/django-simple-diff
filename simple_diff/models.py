@@ -17,10 +17,11 @@ class ModelDiffMixin(object):
         Saves model and set initial state.
         """
         if not self._saving_change_callbacks:
+            self.clean_fields()
             self._saving_change_callbacks = True
             try:
                 for field in self.changed_fields:
-                    on_change_func = getattr(self, 'on_%s_change' % field, None)
+                    on_change_func = getattr(self, "on_%s_change" % field, None)
                     if callable(on_change_func):
                         on_change_func(*self.get_field_diff(field))
             finally:
