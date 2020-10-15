@@ -17,7 +17,6 @@ class ModelDiffMixin(object):
         Saves model and set initial state.
         """
         if not self._saving_change_callbacks:
-            self.clean_fields()
             self._saving_change_callbacks = True
             try:
                 for field in self.changed_fields:
@@ -40,7 +39,14 @@ class ModelDiffMixin(object):
     def _get_diff(self):
         d1 = self.__initial
         d2 = self._get_model_dict()
-        diffs = [(k, (v, d2[k])) for k, v in d1.items() if v != d2[k]]
+
+        diffs = []
+        for k, v in d1.items():
+            f = self._meta.get_field(k)
+            v2 = f.get_prep_value(d2[k])
+            if v != v2:
+                diffs.append((k, (v, v2)))
+
         return dict(diffs)
 
     @property
