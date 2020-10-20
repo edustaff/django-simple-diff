@@ -8,6 +8,13 @@ Tracks Django model changes before save
 
 `pip install django-simple-diff`
 
+## Test
+
+```
+cd test_app
+PYTHONPATH=".." python3 manage.py test
+```
+
 ## Usage
 
 ```python
