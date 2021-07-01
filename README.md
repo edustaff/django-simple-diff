@@ -1,4 +1,5 @@
 # django-simple-diff
+# NOTICE - this project is now hosted on GitLab at https://gitlab.com/edustaff/django-simple-diff.
 
 [![Build Status](https://travis-ci.org/ticalcster/django-simple-diff.svg?branch=master)](https://travis-ci.org/ticalcster/django-simple-diff)
 
